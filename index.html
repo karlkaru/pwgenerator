@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Password Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+
+
+    
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center" id="generatorBox">
+            <form class="box" onchange="return generate()" onsubmit="return generate()">
+                <h1>Password Generator</h1>
+                <br>
+                <div class="input-group mb-3">
+                    <input id="genPass" class="form-control bg-light shadow-none" type="text" placeholder="Generate Password">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary shadow-none" onclick="return copyPassword()" type="button" id="copyButton">Copy</button>
+                    </div>
+                </div>
+                <br>
+                <label id="passLengthLabel" for="passLength" >Password Length: 65</label>
+                <input type="range" min=1 max=128 class="form-control-range" id="passLength" oninput="return passwordLength(this.value)">
+                <br>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="uppercaseChk" checked>
+                    <label for="uppercaseChk" class="form-check-label">Include Uppercase</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="lowercaseChk" checked>
+                    <label for="lowercaseChk" class="form-check-label">Include Lowercase</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="numbersChk" checked>
+                    <label for="numbersChk" class="form-check-label">Include Numbers</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="symbolsChk" checked>
+                    <label for="symbolsChk" class="form-check-label">Include Symbols</label>
+                </div>
+                <br>
+                <input type="submit" value="GENERATE" class="btn btn-primary btn-block" >
+            </form>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<script src="particles.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
